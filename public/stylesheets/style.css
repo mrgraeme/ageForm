@@ -1,0 +1,30 @@
+body{
+margin: 0px;
+padding: 0px;
+font-size: 15px;
+background-color: #666;
+color: #F9F5EA;
+font-family: georgia;
+}
+
+.page-wrapper {
+	text-align:left;
+	width: 900px;
+	margin:0px auto;
+}
+
+.form{
+	margin-top: 260px;
+	text-align: center;
+}
+
+.text{
+	margin-top: 20px;
+}
+
+h1, label{
+	font-weight: bold;
+	font-size: 50px;
+	padding: 0px;
+	margin: 0px;
+}

@@ -1,0 +1,27 @@
+<% if params[:age] == nil %>
+
+<div class="form">
+<%= form_tag("/age", :method => "get") do %>
+<%= label_tag(:age, "What is your age:") %><br /><br />
+<%= select_date Date.parse('1982-01-01'), :prefix => :age, :start_year => Time.now.year - 90, :end_year => Time.now.year %>
+<%= submit_tag("Submit") %>
+<% end %>
+</div>
+
+<% else %>
+<div class="text">
+<h1>You are <%= @years_old.to_i %> years, <%= @months_old.to_i %> months and <%= @days_old.to_i %> days old.</h1>
+<h1>You were born on a <%= @birth_day %>.</h1>
+<h1>You have been alive for around <%= @seconds_old.to_i %> seconds.</h1>
+<h1>
+<% if @billion_seconds_old < Time.now %>
+You turned
+<% else %>
+You will turn 
+<% end %>
+
+1 billion seconds old on <%= @billion_seconds_old.strftime("%A, %d of %B, %Y") %>. </h1>
+
+<h1>Based on average life expectancy you have <%= @time_away_from_life_expectancy.to_i %> days left so make sure you are having fun... </h1>
+</div>
+<% end %>
